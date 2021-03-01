@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HotDog</title>
+</head>
+
+
+<body>
+    <h1>Joe's Hotdogs</h1>
+    <p style="font-weight:bold">Menu</p>
+    <table style="width:25%">
+        <tr>
+            <td style="font-weight:bold">Item</th>
+            <td style="font-weight:bold">Price</th>
+        </tr>
+        <tr>
+            <td>Hot dog</td>
+            <td>$3.25</td>
+        </tr>
+        <tr>
+            <td>French Fries</td>
+            <td>$2.00</td>
+        </tr>
+        <tr>
+            <td>Drinks</td>
+            <td>$1.50</td>
+        </tr>
+    </table>
+
+    <script>
+        numHotdogs = prompt("How many hotdogs would you like? ")
+        numFries = prompt("How many orders of fries would you like? ")
+        numSodas = prompt("How many sodas would you like? ")
+
+        costHotdogs = numHotdogs * 3.25
+        costFries = numFries * 2
+        costSodas = numSodas * 1.5
+
+        total1 = costFries + costSodas + costHotdogs
+        discount = 0
+        total2 = total1
+
+        if (total1 > 20) {
+            total2 = total1 * 0.9
+            discount = total1 * 0.1
+        }
+
+        tax = total2 * 0.0625
+        total3 = total2 + tax
+
+        document.write("<p>Hotdogs: " + numHotdogs + " x $3.25 = $" + costHotdogs + "</p>")
+        document.write("<p>Fries: " + numFries + " x $2.00 = $" + costFries + "</p>")
+        document.write("<p>Sodas: " + numHotdogs + " x $3.25 = $" + costSodas + "</p>")
+        if (discount > 0){
+            document.write("<p>Discount: $" + discount.toFixed(2) + "</p>")
+        }
+        document.write("<p>Tax: $" + tax.toFixed(2) + "</p>")
+        document.write("<p>Total: $" + total3.toFixed(2) + "</p>")
+    </script>
+</body>
+
+</html>
